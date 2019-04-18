@@ -13,6 +13,10 @@ public class If2 {
 		}else {
 			System.out.println("홀수입니다.");
 		}
+		
+		System.out.println("----삼항연산자");
+		
+		System.out.println(y == 0 ? "짝수" : "홀수");
 
 	}
 
