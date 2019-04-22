@@ -1,0 +1,105 @@
+5일차
+========================
+*프로그래머
+------------------------
+*데이터
+
+*하나 - 변수(데이터를 저장할 공간)>>,         변수명>>, RAM
+
+*여러개 - 배열
+
+*같은 데이터 여러개 - 배열
+
+*다른 데이터 여러개 - 컬렉션
+========================= ^휘발성 데이터
+*저장 - 파일
+
+*많은 양을 저장, 관리 - dbms
+*너무 많은 양을 저장, 관리 - big data, 하둡
+                          - 자바
+                          - 파이썬 분석
+
+
+*제어문 - 순차적
+        - 조건
+        - 반복
+
+기본데이터 - 실수형, 정수형, 논리형, 문자형
+연산자 - 산술 , 비교, 논리
+
+조건문 - if, if else, if_ else if_else                switch 
+-----------------------------------
+
+1 변수란 무엇인가? 데이터를 저장할 공간
+2.변수의 종류- 인스턴스 변수, 클래스 변수, 지역변수(메서드 내에서 생성되며 메서드 내에서만 쓸수있는 변수)
+3.자바의 기본형 데이터 4가지 
+4. 연산자 주요 3가지 
+5 제어문 3가지, 각 종류 간단 설명
+ 순차
+ 분기문: if, if_else, switch
+ 반복문: while, for
+
+
+--------------
+create>>>>>>database student:  
+
+show
+
+
+
+
+
+
+
+
+
+
+
+
+쇼핑몰
+1. db생성: computer
+2. shop db선택
+3.table을 생성:회원 정보 member
+   table명, 항목명, 데이터 타입
+4.레코드 3개 insert
+5회원 전체 검색
+
+
+create database shop;
+show database;
+use shop;
+create table member (
+id varchar(20),
+pw varchar(20),
+name varchar(20)
+);
+
+create table member2 (
+id varchar(20),
+pw varchar(20),
+name varchar(20)
+);
+
+
+create tabler member3 (
+id varchar(20),
+pw varchar(20),
+name varchar(20)
+);
+
+
+
+inser into member values ('ccc', '123', 'kim);
+
+
+select * from member;
+
+
+
+
+
+
+
+
+
+
