@@ -68,7 +68,77 @@ public class BbsDAO {
 		}//try - catch - finally
 		return dto;
 	}//select
-	
+
+	public void insert(BbsDTO dto) {
+		try {
+			//1. 드라이버 설정
+			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("1. 드라이버 설정 OK..");
+			//2. DB연결
+			con = DriverManager.getConnection(url, user, password);
+			System.out.println("2. DB연결 OK..");
+			//3. SQL문 결정(객체화)
+			String sql = "insert into bbs values (?,?,?,?) ";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getId());
+			ps.setString(2, dto.getTitle());
+			ps.setString(3, dto.getContent());
+			ps.setString(4, dto.getEtc());
+			System.out.println("3. SQL문 객체화 OK..");
+			//4. SQL문 전송
+			ps.executeUpdate();
+			System.out.println("4. SQL문 전송 OK..");
+			//SQL문의 결과가 있으면, 받아서 처리
+	  } catch (Exception e) {
+		    e.printStackTrace();
+		   }
+	  }
+	public void update(BbsDTO dto) {
+		try {
+			//1. 드라이버 설정
+			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("1. 드라이버 설정 OK..");
+			//2. DB연결
+			con = DriverManager.getConnection(url, user, password);
+			System.out.println("2. DB연결 OK..");
+			//3. SQL문 결정(객체화)
+			String sql = "update bbs set title = ? where id = ? ";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getId());
+			ps.setString(2, dto.getTitle());
+			System.out.println("3. SQL문 객체화 OK..");
+			//4. SQL문 전송
+			ps.executeUpdate();
+			System.out.println("4. SQL문 전송 OK..");
+			//SQL문의 결과가 있으면, 받아서 처리
+	  } catch (Exception e) {
+		    e.printStackTrace();
+		   }
+	  }
+	public void delete(String id) {
+		try {
+			//1. 드라이버 설정
+			Class.forName("com.mysql.jdbc.Driver");
+			System.out.println("1. 드라이버 설정 OK..");
+			//2. DB연결
+			con = DriverManager.getConnection(url, user, password);
+			System.out.println("2. DB연결 OK..");
+			//3. SQL문 결정(객체화)
+			String sql = "delete from bbs where id = ? ";
+			ps = con.prepareStatement(sql);
+			ps.setString (1,id);
+			System.out.println("3. SQL문 객체화 OK..");
+			//4. SQL문 전송
+			ps.executeUpdate();
+			System.out.println("4. SQL문 전송 OK..");
+			//SQL문의 결과가 있으면, 받아서 처리
+	  } catch (Exception e) {
+		    e.printStackTrace();
+		   }
+	  }
+
+}
+
 
 	
-}//class
+

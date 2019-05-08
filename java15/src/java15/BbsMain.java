@@ -80,6 +80,13 @@ public class BbsMain {
 		JButton btnBbs = new JButton("BBS \uC0BD\uC785\uD558\uAE30");
 		btnBbs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+			 	BbsDTO dto = new BbsDTO();
+			 	dto.setId(idText.getText());
+			 	dto.setTitle(titleText.getText());
+			 	dto.setContent(contentText.getText());
+			 	dto.setEtc(etcText.getText());
+			 	BbsDAO dao = new BbsDAO();
+			 	dao.insert(dto);
 			}
 		});
 		btnBbs.setFont(new Font("±¼¸²", Font.BOLD, 30));
@@ -88,7 +95,13 @@ public class BbsMain {
 		JButton btnBbs_1 = new JButton("BBS \uC218\uC815\uD558\uAE30");
 		btnBbs_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				BbsDTO dto = new BbsDTO();
+			 	dto.setId(idText.getText());
+			 	dto.setTitle(titleText.getText());
+			 	dto.setContent(contentText.getText());
+			 	dto.setEtc(etcText.getText());
+			 	BbsDAO dao = new BbsDAO();
+			 	dao.update(dto);
 			}
 		});
 		btnBbs_1.setFont(new Font("±¼¸²", Font.BOLD, 30));
@@ -97,7 +110,9 @@ public class BbsMain {
 		JButton btnBbs_2 = new JButton("BBS \uC81C\uAC70\uD558\uAE30");
 		btnBbs_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				String id =idText.getText();
+			 	BbsDAO dao = new BbsDAO();
+			 	dao.delete(id);
 			}
 		});
 		btnBbs_2.setFont(new Font("±¼¸²", Font.BOLD, 30));
