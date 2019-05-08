@@ -1,29 +1,36 @@
 package pos;
 
-import java.awt.FlowLayout;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.awt.BorderLayout;
 import javax.swing.JButton;
+import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.SwingConstants;
 
 public class Main {
 
-	public Main() {
+	public static void main(String[] args) {
 		
-		JFrame f = new JFrame("À½½ÄÁ¡ POS±â");
-		f.getContentPane().setFont(new Font("±¼¸²", Font.BOLD, 12));
-		f.setSize(1000, 900);
+		JFrame f = new JFrame("À½½ÄÁ¡ POS½Ã½ºÅÛ");
+		f.setSize(900, 800);
 		f.getContentPane().setLayout(null);
 		
+		JPanel p = new JPanel();
+		p.setBounds(0, 0, 884, 761);
+		f.getContentPane().add(p);
+		p.setLayout(null);
 		
-		JButton b1 = new JButton("\uC885\uB8CC");
-		b1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		JPanel p1 = new JPanel();
+		p1.setBounds(0, 0, 884, 761);
+		f.getContentPane().add(p1);
+		p1.setLayout(null);
+		
+		JButton btnNewButton = new JButton("\uC885\uB8CC");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
 				int result = JOptionPane.showConfirmDialog(f, "Á¤¸» Á¾·áÇÏ½Ã°Ú½À´Ï±î?", "Á¾·á", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 	            if(result == JOptionPane.NO_OPTION) {
 	               
@@ -32,132 +39,204 @@ public class Main {
 	            }
 			}
 		});
-		b1.setBounds(29, 25, 81, 39);
-		f.getContentPane().add(b1);
+		btnNewButton.setBounds(12, 10, 116, 61);
+		p.add(btnNewButton);
 		
-		JButton b2 = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		JButton button = new JButton("\uB85C\uADF8\uC778");
+		button.setBounds(756, 10, 116, 61);
+		p.add(button);
+		
+		JButton button_1 = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		button_1.setBounds(608, 10, 116, 61);
+		p.add(button_1);
+		
+		JButton b1 = new JButton("1");
+		b1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
+			}
+		});
+		b1.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b1.setVerticalAlignment(SwingConstants.TOP);
+		b1.setBounds(12, 140, 191, 148);
+		p.add(b1);
+		
+		JButton b2 = new JButton("2");
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				p.setVisible(false);
+				p1.setVisible(true);
 			}
 		});
-		b2.setBounds(763, 25, 98, 39);
-		f.getContentPane().add(b2);
+		b2.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b2.setVerticalAlignment(SwingConstants.TOP);
+		b2.setBounds(237, 140, 191, 148);
+		p.add(b2);
 		
-		JButton b3 = new JButton("\uB85C\uADF8\uC778");
+		JButton b3 = new JButton("3");
 		b3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
 			}
 		});
-		b3.setBounds(873, 25, 87, 39);
-		f.getContentPane().add(b3);
+		b3.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b3.setVerticalAlignment(SwingConstants.TOP);
+		b3.setBounds(459, 140, 191, 148);
+		p.add(b3);
 		
-		JButton btnNewButton = new JButton("1");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Menu menu = new Menu();
-				
+		JButton b4 = new JButton("4");
+		b4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
 			}
 		});
-		btnNewButton.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		btnNewButton.setVerticalAlignment(SwingConstants.TOP);
-		btnNewButton.setBounds(29, 119, 197, 167);
-		f.getContentPane().add(btnNewButton);
+		b4.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b4.setVerticalAlignment(SwingConstants.TOP);
+		b4.setBounds(681, 140, 191, 148);
+		p.add(b4);
 		
-		JButton button = new JButton("2");
-		button.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button.setVerticalAlignment(SwingConstants.TOP);
-		button.setBounds(278, 119, 197, 167);
-		f.getContentPane().add(button);
+		JButton b5 = new JButton("5");
+		b5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
+			}
+		});
+		b5.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b5.setVerticalAlignment(SwingConstants.TOP);
+		b5.setBounds(12, 298, 191, 148);
+		p.add(b5);
 		
-		JButton button_1 = new JButton("3");
-		button_1.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button_1.setVerticalAlignment(SwingConstants.TOP);
-		button_1.setBounds(523, 119, 197, 167);
-		f.getContentPane().add(button_1);
+		JButton b6 = new JButton("6");
+		b6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
+			}
+		});
+		b6.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b6.setVerticalAlignment(SwingConstants.TOP);
+		b6.setBounds(237, 298, 191, 148);
+		p.add(b6);
 		
-		JButton button_2 = new JButton("4");
-		button_2.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button_2.setVerticalAlignment(SwingConstants.TOP);
-		button_2.setBounds(763, 119, 197, 167);
-		f.getContentPane().add(button_2);
+		JButton b7 = new JButton("7");
+		b7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
+			}
+		});
+		b7.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b7.setVerticalAlignment(SwingConstants.TOP);
+		b7.setBounds(459, 298, 191, 148);
+		p.add(b7);
 		
-		JButton button_3 = new JButton("5");
-		button_3.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button_3.setVerticalAlignment(SwingConstants.TOP);
-		button_3.setBounds(29, 332, 197, 167);
-		f.getContentPane().add(button_3);
+		JButton b8 = new JButton("8");
+		b8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
+			}
+		});
+		b8.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b8.setVerticalAlignment(SwingConstants.TOP);
+		b8.setBounds(681, 298, 191, 148);
+		p.add(b8);
 		
-		JButton button_4 = new JButton("6");
-		button_4.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button_4.setVerticalAlignment(SwingConstants.TOP);
-		button_4.setBounds(278, 332, 197, 167);
-		f.getContentPane().add(button_4);
+		JButton b9 = new JButton("9");
+		b9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
+			}
+		});
+		b9.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b9.setVerticalAlignment(SwingConstants.TOP);
+		b9.setBounds(12, 456, 191, 148);
+		p.add(b9);
 		
-		JButton button_5 = new JButton("7");
-		button_5.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button_5.setVerticalAlignment(SwingConstants.TOP);
-		button_5.setBounds(523, 332, 197, 167);
-		f.getContentPane().add(button_5);
+		JButton b10 = new JButton("10");
+		b10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
+			}
+		});
+		b10.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b10.setVerticalAlignment(SwingConstants.TOP);
+		b10.setBounds(237, 456, 191, 148);
+		p.add(b10);
 		
-		JButton button_6 = new JButton("8");
-		button_6.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button_6.setVerticalAlignment(SwingConstants.TOP);
-		button_6.setBounds(763, 332, 197, 167);
-		f.getContentPane().add(button_6);
+		JButton b11 = new JButton("11");
+		b11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
+			}
+		});
+		b11.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b11.setVerticalAlignment(SwingConstants.TOP);
+		b11.setBounds(459, 456, 191, 148);
+		p.add(b11);
 		
-		JButton button_7 = new JButton("9");
-		button_7.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button_7.setVerticalAlignment(SwingConstants.TOP);
-		button_7.setBounds(29, 551, 197, 167);
-		f.getContentPane().add(button_7);
+		JButton b12 = new JButton("12");
+		b12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p.setVisible(false);
+				p1.setVisible(true);
+			}
+		});
+		b12.setFont(new Font("±¼¸²", Font.BOLD, 15));
+		b12.setVerticalAlignment(SwingConstants.TOP);
+		b12.setBounds(681, 456, 191, 148);
+		p.add(b12);
 		
-		JButton button_8 = new JButton("10");
-		button_8.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button_8.setVerticalAlignment(SwingConstants.TOP);
-		button_8.setBounds(278, 551, 197, 167);
-		f.getContentPane().add(button_8);
+		JButton button_13 = new JButton("\uBA54\uB274\uAD00\uB9AC");
+		button_13.setBounds(87, 664, 116, 61);
+		p.add(button_13);
 		
-		JButton button_9 = new JButton("11");
-		button_9.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button_9.setVerticalAlignment(SwingConstants.TOP);
-		button_9.setBounds(523, 551, 197, 167);
-		f.getContentPane().add(button_9);
+		JButton button_14 = new JButton("\uC790\uB9AC\uC774\uB3D9");
+		button_14.setBounds(237, 664, 116, 61);
+		p.add(button_14);
 		
-		JButton button_10 = new JButton("12");
-		button_10.setFont(new Font("±¼¸²", Font.BOLD, 12));
-		button_10.setVerticalAlignment(SwingConstants.TOP);
-		button_10.setBounds(763, 551, 197, 167);
-		f.getContentPane().add(button_10);
+		JButton button_15 = new JButton("\uB9E4\uCD9C\uD604\uD669");
+		button_15.setBounds(390, 664, 116, 61);
+		p.add(button_15);
 		
-		JButton btnNewButton_1 = new JButton("\uBA54\uB274 \uAD00\uB9AC");
-		btnNewButton_1.setBounds(203, 784, 98, 49);
-		f.getContentPane().add(btnNewButton_1);
+		JButton button_16 = new JButton("\uBC1C\uC8FC\uC2DC\uC2A4\uD15C");
+		button_16.setBounds(534, 664, 116, 61);
+		p.add(button_16);
 		
-		JButton button_11 = new JButton("\uC790\uB9AC\uC774\uB3D9");
-		button_11.setBounds(333, 784, 98, 49);
-		f.getContentPane().add(button_11);
-		
-		JButton button_12 = new JButton("\uB9E4\uCD9C\uD604\uD669");
-		button_12.setBounds(460, 784, 98, 49);
-		f.getContentPane().add(button_12);
-		
-		JButton button_13 = new JButton("\uBC1C\uC8FC\uC2DC\uC2A4\uD15C");
-		button_13.setBounds(590, 784, 98, 49);
-		f.getContentPane().add(button_13);
-		
-		JButton button_14 = new JButton("\uADFC\uD1F4\uD604\uD669");
-		button_14.setBounds(720, 784, 98, 49);
-		f.getContentPane().add(button_14);
-		JPanel p = new JPanel();
-		p.setOpaque(false);
+		JButton button_17 = new JButton("\uADFC\uD1F4\uD604\uD669");
+		button_17.setBounds(681, 664, 116, 61);
+		p.add(button_17);
 		
 		
+		JButton bb1 = new JButton("\uC8FC\uBB38");
+		bb1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				p1.setVisible(false);
+				p.setVisible(true);
+			}
+		});
+		bb1.setBounds(764, 610, 108, 141);
+		p1.add(bb1);
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		p1.setVisible(false);
 		f.setVisible(true);
+		
 
-	}
-	public static void main(String[] args) {
-		Main main = new Main();
 	}
 }
