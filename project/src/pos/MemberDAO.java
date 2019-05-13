@@ -3,6 +3,7 @@ package pos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
 
@@ -10,24 +11,24 @@ public class MemberDAO {
 	
 	Connection con;
 	PreparedStatement ps;
-	
+	ResultSet rs;
 	String url;
 	String user;
 	String password;
-	boolean ok = false;
 
-	public void member(MemberDTO dto) throws Exception {
+	public boolean member(MemberDTO dto)  {
 		
 		
-		Class.forName("com.mysql.jdbc.Driver");
-		
-		url = "jdbc:mysql://localhost:3306/pos";
-		user = "root";
-		password = "1234";
-		
-		Connection con = DriverManager.getConnection(url, user, password);
+		boolean ok = false;
 		
 		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			url = "jdbc:mysql://localhost:3306/pos";
+			user = "root";
+			password = "1234";
+			
+			Connection con = DriverManager.getConnection(url, user, password);
 			
 			String sql = "insert into member values (?,?,?,?,?)";
 			ps = con.prepareStatement(sql); 
@@ -44,14 +45,46 @@ public class MemberDAO {
 				JOptionPane.showMessageDialog(null, "가입완료");
 				ok = true;
 			}else {
-				JOptionPane.showMessageDialog(null, "가입불가");
 				
+				JOptionPane.showMessageDialog(null, "가입불가");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-       
+		return ok;
 		
 	}
-
+	public MemberDTO insert(String inputid)  {
+       MemberDTO dto = null;
+		try {
+			int x = -1;
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			url = "jdbc:mysql://localhost:3306/pos";
+			user = "root";
+			password = "1234";
+			
+			Connection con = DriverManager.getConnection(url, user, password);
+			String sql = "select * from member where id = ?";
+			ps = con.prepareStatement(sql);
+			ps.setString(1, inputid);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				x=1;
+				JOptionPane.showMessageDialog(null, "중복된 아이디입니다.");
+				
+			}else {
+			    x=-1;
+			    JOptionPane.showMessageDialog(null, "사용가능한 아이디입니다.");
+			}
+			
+		} catch (Exception e) {
+		}
+		return dto;
+		
+		
+		
+	}
+	
+ 
 }

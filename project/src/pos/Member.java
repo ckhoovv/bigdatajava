@@ -126,6 +126,13 @@ public class Member {
 		f.getContentPane().add(button);
 		
 		JButton btnNewButton_1 = new JButton("Check");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String inputid = t.getText();
+				MemberDAO dao = new MemberDAO();
+				MemberDTO dto = dao.insert(inputid);
+			}
+		});
 		btnNewButton_1.setBounds(299, 65, 73, 32);
 		f.getContentPane().add(btnNewButton_1);
 		
