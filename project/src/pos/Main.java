@@ -3,14 +3,23 @@ package pos;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
 import java.awt.BorderLayout;
+import java.awt.Container;
+
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
 
 public class Main {
+	private static JTextField textField;
 
 	public static void main(String[] args) {
 		
@@ -43,10 +52,21 @@ public class Main {
 		p.add(btnNewButton);
 		
 		JButton button = new JButton("\uB85C\uADF8\uC778");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		button.setBounds(756, 10, 116, 61);
 		p.add(button);
 		
 		JButton button_1 = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Member m = new Member();
+			}
+		});
 		button_1.setBounds(608, 10, 116, 61);
 		p.add(button_1);
 		
@@ -210,10 +230,17 @@ public class Main {
 		button_16.setBounds(534, 664, 116, 61);
 		p.add(button_16);
 		
-		JButton button_17 = new JButton("\uADFC\uD1F4\uD604\uD669");
+		JButton button_17 = new JButton("\uD68C\uC6D0\uAD00\uB9AC");
+		button_17.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+								
+			}
+		});
 		button_17.setBounds(681, 664, 116, 61);
 		p.add(button_17);
 		
+
+
 		
 		JButton bb1 = new JButton("\uC8FC\uBB38");
 		bb1.addActionListener(new ActionListener() {
@@ -222,16 +249,174 @@ public class Main {
 				p.setVisible(true);
 			}
 		});
-		bb1.setBounds(764, 610, 108, 141);
+		bb1.setBounds(769, 559, 103, 192);
 		p1.add(bb1);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(30, 60, 390, 424);
+		p1.add(scrollPane);
 		
+		JTextArea textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
 		
+		JLabel lblNewLabel = new JLabel("NO.");
+		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel.setBounds(38, 39, 57, 15);
+		p1.add(lblNewLabel);
 		
+		JLabel lblNewLabel_1 = new JLabel("\uC0C1\uD488\uBA85");
+		lblNewLabel_1.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_1.setBounds(90, 39, 57, 15);
+		p1.add(lblNewLabel_1);
 		
+		JLabel lblNewLabel_2 = new JLabel("\uC2DC\uAC04");
+		lblNewLabel_2.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_2.setBounds(164, 39, 57, 15);
+		p1.add(lblNewLabel_2);
 		
+		JLabel lblNewLabel_3 = new JLabel("\uC218\uB7C9");
+		lblNewLabel_3.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_3.setBounds(233, 39, 57, 15);
+		p1.add(lblNewLabel_3);
 		
+		JLabel lblNewLabel_4 = new JLabel("\uAE08\uC561");
+		lblNewLabel_4.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_4.setBounds(276, 39, 43, 15);
+		p1.add(lblNewLabel_4);
 		
+		JLabel lblNewLabel_5 = new JLabel("\uCD94\uAC00");
+		lblNewLabel_5.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_5.setBounds(331, 39, 35, 15);
+		p1.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("\uAD6C\uBD84");
+		lblNewLabel_6.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_6.setBounds(377, 39, 43, 15);
+		p1.add(lblNewLabel_6);
+		
+		JButton btnNewButton_1 = new JButton("\uC2DD\uC0AC\uB958");
+		btnNewButton_1.setBounds(432, 35, 108, 43);
+		p1.add(btnNewButton_1);
+		
+		JButton button_2 = new JButton("");
+		button_2.setBounds(769, 35, 103, 43);
+		p1.add(button_2);
+		
+		JButton button_3 = new JButton("\uC548\uC8FC\uB958");
+		button_3.setBounds(546, 35, 108, 43);
+		p1.add(button_3);
+		
+		JButton button_4 = new JButton("\uC8FC\uB958");
+		button_4.setBounds(660, 35, 103, 43);
+		p1.add(button_4);
+		
+		JButton button_5 = new JButton("");
+		button_5.setBounds(432, 82, 108, 43);
+		p1.add(button_5);
+		
+		JButton button_6 = new JButton("");
+		button_6.setBounds(546, 82, 108, 43);
+		p1.add(button_6);
+		
+		JButton button_7 = new JButton("");
+		button_7.setBounds(660, 82, 103, 43);
+		p1.add(button_7);
+		
+		JButton button_8 = new JButton("");
+		button_8.setBounds(769, 82, 103, 43);
+		p1.add(button_8);
+		
+		JButton btnNewButton_2 = new JButton("");
+		btnNewButton_2.setBounds(432, 131, 108, 97);
+		p1.add(btnNewButton_2);
+		
+		JButton button_9 = new JButton("");
+		button_9.setBounds(546, 131, 108, 97);
+		p1.add(button_9);
+		
+		JButton button_10 = new JButton("");
+		button_10.setBounds(660, 131, 103, 97);
+		p1.add(button_10);
+		
+		JButton button_11 = new JButton("");
+		button_11.setBounds(769, 131, 103, 97);
+		p1.add(button_11);
+		
+		JButton button_25 = new JButton("");
+		button_25.setBounds(432, 238, 108, 97);
+		p1.add(button_25);
+		
+		JButton button_26 = new JButton("");
+		button_26.setBounds(546, 238, 108, 97);
+		p1.add(button_26);
+		
+		JButton button_27 = new JButton("");
+		button_27.setBounds(660, 238, 103, 97);
+		p1.add(button_27);
+		
+		JButton button_28 = new JButton("");
+		button_28.setBounds(769, 238, 103, 97);
+		p1.add(button_28);
+		
+		JButton button_12 = new JButton("");
+		button_12.setBounds(432, 345, 108, 97);
+		p1.add(button_12);
+		
+		JButton button_18 = new JButton("");
+		button_18.setBounds(546, 345, 108, 97);
+		p1.add(button_18);
+		
+		JButton button_19 = new JButton("");
+		button_19.setBounds(660, 345, 103, 97);
+		p1.add(button_19);
+		
+		JButton button_20 = new JButton("");
+		button_20.setBounds(769, 345, 103, 97);
+		p1.add(button_20);
+		
+		JButton button_21 = new JButton("");
+		button_21.setBounds(432, 452, 108, 97);
+		p1.add(button_21);
+		
+		JButton button_22 = new JButton("");
+		button_22.setBounds(546, 452, 108, 97);
+		p1.add(button_22);
+		
+		JButton button_23 = new JButton("");
+		button_23.setBounds(660, 452, 103, 97);
+		p1.add(button_23);
+		
+		JButton button_24 = new JButton("");
+		button_24.setBounds(769, 452, 103, 97);
+		p1.add(button_24);
+		
+		JButton btnNewButton_3 = new JButton("\uCDE8\uC18C");
+		btnNewButton_3.setBounds(660, 560, 103, 191);
+		p1.add(btnNewButton_3);
+		
+		JButton button_29 = new JButton("\uACB0\uC81C");
+		button_29.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				p1.setVisible(false);
+				p.setVisible(true);
+			}
+		});
+		button_29.setBounds(551, 560, 103, 191);
+		p1.add(button_29);
+		
+		JButton button_30 = new JButton("\uD560\uC778");
+		button_30.setBounds(437, 560, 103, 191);
+		p1.add(button_30);
+		
+		textField = new JTextField();
+		textField.setBounds(30, 494, 390, 257);
+		p1.add(textField);
+		textField.setColumns(10);
+		
+		JPanel p2 = new JPanel();
+		p2.setBounds(0, 0, 884, 761);
+		f.getContentPane().add(p2);
 		
 		
 		p1.setVisible(false);
