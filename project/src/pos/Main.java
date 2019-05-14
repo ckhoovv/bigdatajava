@@ -10,6 +10,8 @@ import java.awt.Container;
 
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
+
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -18,9 +20,12 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.JMenuBar;
+import javax.swing.ImageIcon;
 
 public class Main {
 	private static JTextField textField;
+	private static JTable table;
 
 	public static void main(String[] args) {
 		
@@ -36,6 +41,18 @@ public class Main {
 		p.setBounds(0, 0, 884, 761);
 		f.getContentPane().add(p);
 		p.setLayout(null);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBounds(432, 135, 440, 419);
+		p1.add(panel);
+		JPanel panel1 = new JPanel();
+		panel1.setBounds(432, 135, 440, 419);
+		p1.add(panel1);
+		panel1.setLayout(null);
+		JPanel panel2 = new JPanel();
+		panel2.setLayout(null);
+		panel2.setBounds(432, 135, 440, 419);
+		p1.add(panel2);
 		
 		JButton btnNewButton = new JButton("\uC885\uB8CC");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -256,9 +273,15 @@ public class Main {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(30, 60, 390, 424);
 		p1.add(scrollPane);
-		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
+		String columnNames[] = {"NO","¸Þ´º¸í"};
+		String data[][] = {
+				{"±èÄ¡Âî°³","µÈÀåÂî°³"},
+				{"µÈÀåÂî°³","±èÄ¡Âî°³"}
+		};
+		DefaultTableModel model = new DefaultTableModel(data, columnNames);
+
+		table = new JTable(model);
+		scrollPane.setViewportView(table);
 		
 		JLabel lblNewLabel = new JLabel("NO.");
 		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 12));
@@ -294,8 +317,14 @@ public class Main {
 		lblNewLabel_6.setFont(new Font("±¼¸²", Font.BOLD, 12));
 		lblNewLabel_6.setBounds(377, 39, 43, 15);
 		p1.add(lblNewLabel_6);
-		
 		JButton btnNewButton_1 = new JButton("\uC2DD\uC0AC\uB958");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				panel.setVisible(true);
+				panel1.setVisible(false);
+				panel2.setVisible(false);
+			}
+		});
 		btnNewButton_1.setBounds(432, 35, 108, 43);
 		p1.add(btnNewButton_1);
 		
@@ -304,10 +333,24 @@ public class Main {
 		p1.add(button_2);
 		
 		JButton button_3 = new JButton("\uC548\uC8FC\uB958");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel.setVisible(false);
+				panel1.setVisible(true);
+				panel2.setVisible(false);
+			}
+		});
 		button_3.setBounds(546, 35, 108, 43);
 		p1.add(button_3);
 		
 		JButton button_4 = new JButton("\uC8FC\uB958");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				panel.setVisible(false);
+				panel1.setVisible(false);
+				panel2.setVisible(true);
+			}
+		});
 		button_4.setBounds(660, 35, 103, 43);
 		p1.add(button_4);
 		
@@ -326,70 +369,6 @@ public class Main {
 		JButton button_8 = new JButton("");
 		button_8.setBounds(769, 82, 103, 43);
 		p1.add(button_8);
-		
-		JButton btnNewButton_2 = new JButton("");
-		btnNewButton_2.setBounds(432, 131, 108, 97);
-		p1.add(btnNewButton_2);
-		
-		JButton button_9 = new JButton("");
-		button_9.setBounds(546, 131, 108, 97);
-		p1.add(button_9);
-		
-		JButton button_10 = new JButton("");
-		button_10.setBounds(660, 131, 103, 97);
-		p1.add(button_10);
-		
-		JButton button_11 = new JButton("");
-		button_11.setBounds(769, 131, 103, 97);
-		p1.add(button_11);
-		
-		JButton button_25 = new JButton("");
-		button_25.setBounds(432, 238, 108, 97);
-		p1.add(button_25);
-		
-		JButton button_26 = new JButton("");
-		button_26.setBounds(546, 238, 108, 97);
-		p1.add(button_26);
-		
-		JButton button_27 = new JButton("");
-		button_27.setBounds(660, 238, 103, 97);
-		p1.add(button_27);
-		
-		JButton button_28 = new JButton("");
-		button_28.setBounds(769, 238, 103, 97);
-		p1.add(button_28);
-		
-		JButton button_12 = new JButton("");
-		button_12.setBounds(432, 345, 108, 97);
-		p1.add(button_12);
-		
-		JButton button_18 = new JButton("");
-		button_18.setBounds(546, 345, 108, 97);
-		p1.add(button_18);
-		
-		JButton button_19 = new JButton("");
-		button_19.setBounds(660, 345, 103, 97);
-		p1.add(button_19);
-		
-		JButton button_20 = new JButton("");
-		button_20.setBounds(769, 345, 103, 97);
-		p1.add(button_20);
-		
-		JButton button_21 = new JButton("");
-		button_21.setBounds(432, 452, 108, 97);
-		p1.add(button_21);
-		
-		JButton button_22 = new JButton("");
-		button_22.setBounds(546, 452, 108, 97);
-		p1.add(button_22);
-		
-		JButton button_23 = new JButton("");
-		button_23.setBounds(660, 452, 103, 97);
-		p1.add(button_23);
-		
-		JButton button_24 = new JButton("");
-		button_24.setBounds(769, 452, 103, 97);
-		p1.add(button_24);
 		
 		JButton btnNewButton_3 = new JButton("\uCDE8\uC18C");
 		btnNewButton_3.setBounds(660, 560, 103, 191);
@@ -414,6 +393,213 @@ public class Main {
 		textField.setBounds(30, 494, 390, 257);
 		p1.add(textField);
 		textField.setColumns(10);
+		
+		
+		JButton button_9 = new JButton("");
+		button_9.setToolTipText("");
+		button_9.setSelectedIcon(null);
+		button_9.setVerticalAlignment(SwingConstants.BOTTOM);
+		button_9.setIcon(new ImageIcon("C:\\Users\\user\\Desktop\\111.jpg"));
+		button_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_9.setBounds(0, 0, 108, 97);
+		panel.add(button_9);
+		
+		JButton button_10 = new JButton("");
+		button_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button_10.setBounds(114, 0, 108, 97);
+		panel.add(button_10);
+		
+		JButton button_11 = new JButton("");
+		button_11.setBounds(228, 0, 103, 97);
+		panel.add(button_11);
+		
+		JButton button_12 = new JButton("");
+		button_12.setBounds(337, 0, 103, 97);
+		panel.add(button_12);
+		
+		JButton button_18 = new JButton("");
+		button_18.setBounds(337, 107, 103, 97);
+		panel.add(button_18);
+		
+		JButton button_19 = new JButton("");
+		button_19.setBounds(228, 107, 103, 97);
+		panel.add(button_19);
+		
+		JButton button_20 = new JButton("");
+		button_20.setBounds(114, 107, 108, 97);
+		panel.add(button_20);
+		
+		JButton button_21 = new JButton("");
+		button_21.setBounds(0, 107, 108, 97);
+		panel.add(button_21);
+		
+		JButton button_22 = new JButton("");
+		button_22.setBounds(0, 214, 108, 97);
+		panel.add(button_22);
+		
+		JButton button_23 = new JButton("");
+		button_23.setBounds(114, 214, 108, 97);
+		panel.add(button_23);
+		
+		JButton button_24 = new JButton("");
+		button_24.setBounds(228, 214, 103, 97);
+		panel.add(button_24);
+		
+		JButton button_25 = new JButton("");
+		button_25.setBounds(337, 214, 103, 97);
+		panel.add(button_25);
+		
+		JButton button_26 = new JButton("");
+		button_26.setBounds(337, 321, 103, 97);
+		panel.add(button_26);
+		
+		JButton button_27 = new JButton("");
+		button_27.setBounds(228, 321, 103, 97);
+		panel.add(button_27);
+		
+		JButton button_28 = new JButton("");
+		button_28.setBounds(114, 321, 108, 97);
+		panel.add(button_28);
+		
+		JButton button_31 = new JButton("");
+		button_31.setBounds(0, 321, 108, 97);
+		panel.add(button_31);
+		
+		
+		JButton button_32 = new JButton("2");
+		button_32.setBounds(0, 0, 108, 97);
+		panel1.add(button_32);
+		
+		JButton button_33 = new JButton("");
+		button_33.setBounds(114, 0, 108, 97);
+		panel1.add(button_33);
+		
+		JButton button_34 = new JButton("");
+		button_34.setBounds(228, 0, 103, 97);
+		panel1.add(button_34);
+		
+		JButton button_35 = new JButton("");
+		button_35.setBounds(337, 0, 103, 97);
+		panel1.add(button_35);
+		
+		JButton button_36 = new JButton("");
+		button_36.setBounds(337, 107, 103, 97);
+		panel1.add(button_36);
+		
+		JButton button_37 = new JButton("");
+		button_37.setBounds(228, 107, 103, 97);
+		panel1.add(button_37);
+		
+		JButton button_38 = new JButton("");
+		button_38.setBounds(114, 107, 108, 97);
+		panel1.add(button_38);
+		
+		JButton button_39 = new JButton("");
+		button_39.setBounds(0, 107, 108, 97);
+		panel1.add(button_39);
+		
+		JButton button_40 = new JButton("");
+		button_40.setBounds(0, 214, 108, 97);
+		panel1.add(button_40);
+		
+		JButton button_41 = new JButton("");
+		button_41.setBounds(114, 214, 108, 97);
+		panel1.add(button_41);
+		
+		JButton button_42 = new JButton("");
+		button_42.setBounds(228, 214, 103, 97);
+		panel1.add(button_42);
+		
+		JButton button_43 = new JButton("");
+		button_43.setBounds(337, 214, 103, 97);
+		panel1.add(button_43);
+		
+		JButton button_44 = new JButton("");
+		button_44.setBounds(337, 321, 103, 97);
+		panel1.add(button_44);
+		
+		JButton button_45 = new JButton("");
+		button_45.setBounds(228, 321, 103, 97);
+		panel1.add(button_45);
+		
+		JButton button_46 = new JButton("");
+		button_46.setBounds(114, 321, 108, 97);
+		panel1.add(button_46);
+		
+		JButton button_47 = new JButton("");
+		button_47.setBounds(0, 321, 108, 97);
+		panel1.add(button_47);
+		
+		
+		JButton button_48 = new JButton("3");
+		button_48.setBounds(0, 0, 108, 97);
+		panel2.add(button_48);
+		
+		JButton button_49 = new JButton("");
+		button_49.setBounds(114, 0, 108, 97);
+		panel2.add(button_49);
+		
+		JButton button_50 = new JButton("");
+		button_50.setBounds(228, 0, 103, 97);
+		panel2.add(button_50);
+		
+		JButton button_51 = new JButton("");
+		button_51.setBounds(337, 0, 103, 97);
+		panel2.add(button_51);
+		
+		JButton button_52 = new JButton("");
+		button_52.setBounds(337, 107, 103, 97);
+		panel2.add(button_52);
+		
+		JButton button_53 = new JButton("");
+		button_53.setBounds(228, 107, 103, 97);
+		panel2.add(button_53);
+		
+		JButton button_54 = new JButton("");
+		button_54.setBounds(114, 107, 108, 97);
+		panel2.add(button_54);
+		
+		JButton button_55 = new JButton("");
+		button_55.setBounds(0, 107, 108, 97);
+		panel2.add(button_55);
+		
+		JButton button_56 = new JButton("");
+		button_56.setBounds(0, 214, 108, 97);
+		panel2.add(button_56);
+		
+		JButton button_57 = new JButton("");
+		button_57.setBounds(114, 214, 108, 97);
+		panel2.add(button_57);
+		
+		JButton button_58 = new JButton("");
+		button_58.setBounds(228, 214, 103, 97);
+		panel2.add(button_58);
+		
+		JButton button_59 = new JButton("");
+		button_59.setBounds(337, 214, 103, 97);
+		panel2.add(button_59);
+		
+		JButton button_60 = new JButton("");
+		button_60.setBounds(337, 321, 103, 97);
+		panel2.add(button_60);
+		
+		JButton button_61 = new JButton("");
+		button_61.setBounds(228, 321, 103, 97);
+		panel2.add(button_61);
+		
+		JButton button_62 = new JButton("");
+		button_62.setBounds(114, 321, 108, 97);
+		panel2.add(button_62);
+		
+		JButton button_63 = new JButton("");
+		button_63.setBounds(0, 321, 108, 97);
+		panel2.add(button_63);
 		
 		
 		p1.setVisible(false);

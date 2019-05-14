@@ -13,7 +13,7 @@ import javax.swing.JPasswordField;
 
 public class Login {
 	private static JTextField t;
-	private JTextField t1;
+	private static JTextField t1;
 
 	public Login() {
 		JFrame f = new JFrame("·Î±×ÀÎ");
@@ -36,6 +36,10 @@ public class Login {
 		t.setBounds(114, 69, 191, 41);
 		f.getContentPane().add(t);
 		t.setColumns(10);
+		t1 = new JTextField();
+		t1.setColumns(10);
+		t1.setBounds(114, 126, 191, 41);
+		f.getContentPane().add(t1);
 		
 		JButton btnNewButton = new JButton("\uB85C\uADF8\uC778");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -46,14 +50,10 @@ public class Login {
 				LoginDTO dto = dao.login(inputid, inputpw);
 			}
 		});
+		
 		btnNewButton.setFont(new Font("±¼¸²", Font.PLAIN, 32));
 		btnNewButton.setBounds(134, 192, 137, 32);
 		f.getContentPane().add(btnNewButton);
-		
-		t1 = new JTextField();
-		t1.setColumns(10);
-		t1.setBounds(114, 126, 191, 41);
-		f.getContentPane().add(t1);
 		f.setVisible(true);
 
 	}
