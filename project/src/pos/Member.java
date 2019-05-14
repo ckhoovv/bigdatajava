@@ -101,10 +101,11 @@ public class Member {
 				dto.setTel(tel);
 				boolean ok = dao.member(dto);
 				if(t.getText().isEmpty()||t1.getText().isEmpty()||t2.getText().isEmpty()||t3.getText().isEmpty()||t4.getText().isEmpty()) {
+					ok =false;
 					JOptionPane.showMessageDialog(null, "비어있는 칸이 있습니다.");
 				}else if (ok) {
 					JOptionPane.showMessageDialog(null, "가입이 완료되었습니다..");
-					
+					f.dispose();
 				}else {
 					JOptionPane.showMessageDialog(null, "가입이 불가능합니다..");
 					

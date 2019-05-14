@@ -70,6 +70,8 @@ public class MemberDAO {
 			ps.setString(1, inputid);
 			rs = ps.executeQuery();
 			if(rs.next()) {
+				
+				rs.getString(1);
 			
 				JOptionPane.showMessageDialog(null, "중복된 아이디입니다.");
 				
