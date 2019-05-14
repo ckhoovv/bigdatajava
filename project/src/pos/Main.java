@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 
 public class Main {
 	private static JTextField textField;
@@ -27,15 +28,14 @@ public class Main {
 		f.setSize(900, 800);
 		f.getContentPane().setLayout(null);
 		
-		JPanel p = new JPanel();
-		p.setBounds(0, 0, 884, 761);
-		f.getContentPane().add(p);
-		p.setLayout(null);
-		
 		JPanel p1 = new JPanel();
 		p1.setBounds(0, 0, 884, 761);
 		f.getContentPane().add(p1);
 		p1.setLayout(null);
+		JPanel p = new JPanel();
+		p.setBounds(0, 0, 884, 761);
+		f.getContentPane().add(p);
+		p.setLayout(null);
 		
 		JButton btnNewButton = new JButton("\uC885\uB8CC");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -54,7 +54,7 @@ public class Main {
 		JButton button = new JButton("\uB85C\uADF8\uC778");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				Login log = new Login();
 				
 			}
 		});
@@ -239,6 +239,7 @@ public class Main {
 		button_17.setBounds(681, 664, 116, 61);
 		p.add(button_17);
 		
+		
 
 
 		
@@ -413,10 +414,6 @@ public class Main {
 		textField.setBounds(30, 494, 390, 257);
 		p1.add(textField);
 		textField.setColumns(10);
-		
-		JPanel p2 = new JPanel();
-		p2.setBounds(0, 0, 884, 761);
-		f.getContentPane().add(p2);
 		
 		
 		p1.setVisible(false);

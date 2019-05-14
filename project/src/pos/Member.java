@@ -99,13 +99,18 @@ public class Member {
 				dto.setName(name);
 				dto.setBirth(birth);
 				dto.setTel(tel);
-				
-				try {
-					dao.member(dto);
-				} catch (Exception e) {
-					System.out.println("에러발생!!에러발생!!");
-					e.printStackTrace();
+				boolean ok = dao.member(dto);
+				if(t.getText().isEmpty()||t1.getText().isEmpty()||t2.getText().isEmpty()||t3.getText().isEmpty()||t4.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "비어있는 칸이 있습니다.");
+				}else if (ok) {
+					JOptionPane.showMessageDialog(null, "가입이 완료되었습니다..");
+					
+				}else {
+					JOptionPane.showMessageDialog(null, "가입이 불가능합니다..");
+					
 				}
+				
+				
 			}
 		});
 		btnNewButton.setBounds(87, 292, 87, 41);
@@ -131,6 +136,7 @@ public class Member {
 				String inputid = t.getText();
 				MemberDAO dao = new MemberDAO();
 				MemberDTO dto = dao.insert(inputid);
+				
 			}
 		});
 		btnNewButton_1.setBounds(299, 65, 73, 32);

@@ -1,7 +1,7 @@
 package pos;
 
 public class MemberDTO {
-	 String id;
+	 private String id;
 	 String pw;
 	 String name;
 	 String birth;

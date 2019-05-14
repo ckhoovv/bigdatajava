@@ -41,23 +41,23 @@ public class MemberDAO {
 			
 			
 			int r = ps.executeUpdate();
-			if(r>0) {
-				JOptionPane.showMessageDialog(null, "가입완료");
+			if(r > 0) {
 				ok = true;
 			}else {
-				
 				JOptionPane.showMessageDialog(null, "가입불가");
+				
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		return ok;
 		
 	}
 	public MemberDTO insert(String inputid)  {
        MemberDTO dto = null;
 		try {
-			int x = -1;
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			url = "jdbc:mysql://localhost:3306/pos";
@@ -70,15 +70,22 @@ public class MemberDAO {
 			ps.setString(1, inputid);
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				x=1;
+			
 				JOptionPane.showMessageDialog(null, "중복된 아이디입니다.");
 				
 			}else {
-			    x=-1;
 			    JOptionPane.showMessageDialog(null, "사용가능한 아이디입니다.");
 			}
 			
 		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				rs.close();
+				ps.close();
+			}catch(Exception e){
+			e.printStackTrace();	
+			}
 		}
 		return dto;
 		
