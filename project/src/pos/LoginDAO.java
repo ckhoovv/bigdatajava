@@ -33,18 +33,14 @@ public class LoginDAO {
 			rs= ps.executeQuery();
 			if(rs.next()){
 				dto = new MemberDTO();
-				String id = rs.getString(1);
 				String pw = rs.getString(2);
-				if(id.equals(inputid) && pw.equals(inputpw)) {
+				if(pw.equals(inputpw)) {
 					JOptionPane.showMessageDialog(null, "로그인성공");
-					
-				}else if(id.equals(inputid)){
+				}else {
 					JOptionPane.showMessageDialog(null, "비밀번호를 확인하세요");
 					
-				}else{
-					JOptionPane.showMessageDialog(null, "아이디를 확인하세요");
 				}
-			}
+				}
 
 		} catch (Exception e) {
 			e.printStackTrace();

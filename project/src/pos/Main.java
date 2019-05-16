@@ -27,33 +27,23 @@ import javax.swing.ImageIcon;
 public class Main {
 	private static JTextField textField;
 	private static JTable table;
+	
+	
 
 	public static void main(String[] args) {
 		
 		JFrame f = new JFrame("음식점 POS시스템");
 		f.setSize(900, 800);
 		f.getContentPane().setLayout(null);
+		JPanel p = new JPanel();
+		p.setBounds(0, 0, 884, 761);
+		f.getContentPane().add(p);
+		p.setLayout(null);
 		
 		JPanel p1 = new JPanel();
 		p1.setBounds(0, 0, 884, 761);
 		f.getContentPane().add(p1);
 		p1.setLayout(null);
-		JPanel p = new JPanel();
-		p.setBounds(0, 0, 884, 761);
-		f.getContentPane().add(p);
-		p.setLayout(null);
-		JPanel panel = new JPanel();
-		panel.setLayout(null);
-		panel.setBounds(432, 135, 440, 419);
-		p1.add(panel);
-		JPanel panel1 = new JPanel();
-		panel1.setBounds(432, 135, 440, 419);
-		p1.add(panel1);
-		panel1.setLayout(null);
-		JPanel panel2 = new JPanel();
-		panel2.setLayout(null);
-		panel2.setBounds(432, 135, 440, 419);
-		p1.add(panel2);
 		
 		JButton btnNewButton = new JButton("\uC885\uB8CC");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -233,6 +223,12 @@ public class Main {
 		p.add(b12);
 		
 		JButton button_13 = new JButton("\uBA54\uB274\uAD00\uB9AC");
+		button_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Menu m= new Menu();
+				
+			}
+		});
 		button_13.setBounds(87, 664, 116, 61);
 		p.add(button_13);
 		
@@ -256,6 +252,19 @@ public class Main {
 		});
 		button_17.setBounds(681, 664, 116, 61);
 		p.add(button_17);
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBounds(432, 135, 440, 419);
+		p1.add(panel);
+		JPanel panel1 = new JPanel();
+		panel1.setBounds(432, 135, 440, 419);
+		p1.add(panel1);
+		panel1.setLayout(null);
+		JPanel panel2 = new JPanel();
+		panel2.setLayout(null);
+		panel2.setBounds(432, 135, 440, 419);
+		p1.add(panel2);
 		
 		
 
