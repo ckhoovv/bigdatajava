@@ -35,6 +35,7 @@ public class LoginDAO {
 				dto = new MemberDTO1();
 				String pw = rs.getString(2);
 				if(pw.equals(inputpw)) {
+					Main main = new Main();
 					JOptionPane.showMessageDialog(null, "로그인성공");
 				}else {
 					JOptionPane.showMessageDialog(null, "아이디와 비밀번호를 확인하세요");

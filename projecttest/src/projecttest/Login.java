@@ -39,12 +39,11 @@ public class Login extends JFrame{
 		});
 		jb2 = new JButton("·Î±×ÀÎ");
 		jb2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
 				String inputid = jtf2.getText();
 				String inputpw = pf.getText();
 				LoginDAO dao = new LoginDAO();
 				MemberDTO1 dto = dao.login(inputid,inputpw);
-				
 			}
 		});
 		jp1.setLayout(null);
@@ -79,6 +78,6 @@ public class Login extends JFrame{
 	
 	
 	public static void main(String args[]) {
-		new Login();
-	}
+		new Login();	
+		}
 }
