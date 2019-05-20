@@ -129,6 +129,8 @@ public class Menu extends JFrame implements MouseListener {
 	
 			me.redefJTable();
 			jt.updateUI();
+			
+			
 	}
 
  }
