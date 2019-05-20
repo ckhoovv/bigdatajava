@@ -45,18 +45,25 @@ public class Order1 {
 		   ee.printStackTrace();
 		  }
 		 }
-	 public void defJTable() {
-		  try {
+	 public void defJTable(String inputnumber) {
+		 OrderDTO dto = null; 
+		 try {
 		   conn();
-		   pstmt = con.prepareStatement("select * from foodlist");
+		   pstmt = con.prepareStatement("select * from foodlist where number = ?");
 		   rs = pstmt.executeQuery();
 		   //DB의 데이터 받아 와 row입력
-		  while(rs.next()) {
-		    Vector row = new Vector();
+		   pstmt.setString(1, inputnumber);
+		   while(rs.next()) {
+		    dto = new OrderDTO();
+			Vector row = new Vector();
 		    row.addElement(rs.getString(1));
 		    row.addElement(rs.getString(2));
 		    row.addElement(rs.getString(3));
 		    row.addElement(rs.getString(4));
+		    dto.setNumber(number);
+		    dto.setMenu(menu);
+		    dto.setAmount(amount);
+		    dto.setPrice(price);
 		    data.addElement(row);
 		  }
 		  } catch (SQLException e) {
@@ -67,18 +74,26 @@ public class Order1 {
 		  }
 		 }
 		 //renew
-		 public void redefJTable() {
-		  data.clear();
+		 public void redefJTable(String inputnumber) {
+		  OrderDTO dto = null;
+	      data.clear();
 		  try {
 		   conn();
-		   pstmt = con.prepareStatement("select * from foodlist");
+		   pstmt = con.prepareStatement("select * from foodlist where number = ?");
 		   rs = pstmt.executeQuery();
+		   pstmt.setString(1, inputnumber);
+		   
 		   while (rs.next()) {
+			dto = new OrderDTO();
 		    Vector row = new Vector();
 		    row.addElement(rs.getString(1));
 		    row.addElement(rs.getString(2));
 		    row.addElement(rs.getString(3));
 		    row.addElement(rs.getString(4));
+		    dto.setNumber(number);
+		    dto.setMenu(menu);
+		    dto.setAmount(amount);
+		    dto.setPrice(price);
 		    data.addElement(row);
 		   }
 		  } catch (SQLException e) {
@@ -90,7 +105,6 @@ public class Order1 {
 		 }
 		 //JTable을 리턴.
 		 public JTable getJTable(){
-		  defJTable();
 		  col.addElement("번호");
 		  col.addElement("메뉴명");
 		  col.addElement("수량");

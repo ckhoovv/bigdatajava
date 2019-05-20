@@ -16,6 +16,7 @@ public class Menu extends JFrame implements MouseListener {
 	JPanel jp1, jp2, jp3;
 	JScrollPane jsp = null;
 	JTable jt;
+	JLabel jl1,jl2,jl3,jl4;
 	Menu1 me = new Menu1();
 	String deleteRow = "";
 
@@ -28,6 +29,11 @@ public class Menu extends JFrame implements MouseListener {
 		jtf2 = new JTextField(8);
 		jtf3 = new JTextField(8);
 		jtf4 = new JTextField(8);
+		
+		jl1 = new JLabel("번호");
+		jl2 = new JLabel("메뉴");
+		jl3 = new JLabel("수량");
+		jl4 = new JLabel("금액");
 
 		jb1 = new JButton("입력");
 		jb2 = new JButton("삭제");
@@ -37,10 +43,15 @@ public class Menu extends JFrame implements MouseListener {
 		jp1.add(jb2);
 		jp1.add(jb3);
 
+		jp2.add(jl1);
 		jp2.add(jtf1);
+		jp2.add(jl2);
 		jp2.add(jtf2);
+		jp2.add(jl3);
 		jp2.add(jtf3);
+		jp2.add(jl4);
 		jp2.add(jtf4);
+		
 
 		add(jp1, "South");
 		add(jp2, "North");
