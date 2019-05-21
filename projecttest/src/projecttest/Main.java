@@ -55,6 +55,7 @@ public class Main {
 		JButton b1 = new JButton("1");
 		b1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
 		b1.setFont(new Font("±¼¸²", Font.BOLD, 15));

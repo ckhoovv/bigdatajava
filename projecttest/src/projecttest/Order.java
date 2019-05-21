@@ -23,121 +23,142 @@ import javax.swing.JList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Order extends JFrame {
+public class Order extends JFrame{
+	JButton[] jb = new JButton[16];
 	JTable jt;
 	JTextField jtf;
 	JScrollPane jsp = null;
 	JPanel jp1, jp2, jp3;
+	JButton[] jb1 = new JButton[4];
+	Order1 or = new Order1();
 	private JTable table;
 	Connection con = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs = null;
-	String sql;
-	String[] colname = { "번호", "메뉴명", "수량", "가격" };
-	String[][] data;
-	DefaultTableModel model = new DefaultTableModel(data, colname);
-	String number;
-	public void conn() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (ClassNotFoundException cnfe) {
-			cnfe.printStackTrace();
-			return;
-		}
-		try {
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos", "root", "1234");
-
-		} catch (SQLException ee) {
-			ee.printStackTrace();
-		}
-	}
-
-	public void disconn() {
-		// 연결 끊기
-		try {
-			if (rs != null)
-				rs.close();
-			if (pstmt != null)
-				pstmt.close();
-			if (con != null)
-				con.close();
-		} catch (SQLException ee) {
-			ee.printStackTrace();
-		}
-	}
-
-	Order() {
+	 PreparedStatement pstmt = null;
+	 ResultSet rs = null;
+	 ResultSet rs1 = null;
+	 String sql;
+	 String[] colname = { "번호", "메뉴명", "수량", "가격" };
+		String[][] data;
+		DefaultTableModel model = new DefaultTableModel(data, colname);
+	 public void conn() {
+		  try {
+		   Class.forName("com.mysql.jdbc.Driver");
+		  } catch (ClassNotFoundException cnfe) {
+		   cnfe.printStackTrace();
+		   return;
+		  }
+		  try {
+		   con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pos","root", "1234");
+		   
+		  } catch (SQLException ee) {
+		   ee.printStackTrace();
+		  }
+		 }
+		 public void disconn() {
+		  // 연결 끊기
+		  try {
+		   if (rs != null)
+		    rs.close();
+		   if (pstmt != null)
+		    pstmt.close();
+		   if (con != null)
+		    con.close();
+		  } catch (SQLException ee) {
+		   ee.printStackTrace();
+		  }
+		 }
+	Order(){
 		setTitle("메뉴 주문창");
-
+		
 		setSize(1000, 800);
 		getContentPane().setLayout(null);
-
+		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(14, 44, 510, 593);
+		scrollPane.setBounds(14, 44, 510, 622);
 		getContentPane().add(scrollPane);
-
+		
 		table = new JTable(model);
 		scrollPane.setViewportView(table);
 		JButton[] buttonList = null;
 		int rowCount = 0;
-		int i = 0, x = 538, y = -37, width = 122, height = 95, cnt = 0;
-		Vector row = new Vector();
+		int i = 0, x=538,y=39,width=122,height=61, cnt=0;
 		try {
-			conn();
-			pstmt = con.prepareStatement("select * from foodlist");
-			rs = pstmt.executeQuery();
-			rs.last();
-			rowCount = rs.getRow();
-			// DB의 데이터 받아 와 row입력
-			buttonList = new JButton[rowCount];
-			rs.beforeFirst();// 처음상태로 이동되는거
-			while (rs.next()) {
-				buttonList[i] = new JButton(rs.getString(2));
-				buttonList[i].setName(rs.getString(1));
-				row.addElement(rs.getString(1));
-				row.addElement(rs.getString(2));
-				row.addElement(rs.getString(3));
-				row.addElement(rs.getString(4));
-				
-				
-				x += width + 10;
-				if (cnt % 3 == 0) {
-					x = 558;
-					y += height + 20;
+			   conn();
+			   sql = "select * from foodlist";
+			   pstmt = con.prepareStatement(sql);
+			   rs = pstmt.executeQuery();
+			   rs.last();
+			   rowCount = rs.getRow();
+			   //DB의 데이터 받아 와 row입력
+			   buttonList = new JButton[rowCount];
+			   
+			   rs = pstmt.executeQuery();//처음상태로 이동되는거 
+				while (rs.next()) {
+					buttonList[i] = new JButton(rs.getString(2));
+					buttonList[i].setName(rs.getString(1)+"|"+rs.getString(2)+"|"+rs.getString(3)+"|"+rs.getString(4));
+					x += width+10;
+					if(cnt%3 ==0) {
+						x = 538;
+						y += height + 10;
+					}
+					buttonList[i].addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							System.out.println(((JButton)e.getSource()).getName());
+							String[] temp = ((JButton)e.getSource()).getName().split("\\|");//스플릿은 문자를 나누는거 
+							model.addRow(new Object[] {temp[0],temp[1],temp[2],temp[3]});
+						}
+					});
+					
+					
+					buttonList[i].setBounds(x, y, width, height);
+					getContentPane().add(buttonList[i]);
+					cnt++;
+					i++;
+					
 				}
-				buttonList[i].setBounds(x, y, width, height);
-				getContentPane().add(buttonList[i]);
-				cnt++;
-				i++;
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			disconn();
-			try {
-				rs.close();
-				pstmt.close();
-				con.close();
-			} catch (Exception e2) {
-			}
-		}
-
-		for (int j = 0; j < buttonList.length; j++) {
-			buttonList[j].addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					DefaultTableModel m = (DefaultTableModel) table.getModel();
-					m.addRow(row);
-				}
-			});
-		}
-
+			   
+			  } catch (SQLException e) {
+			   e.printStackTrace();
+			  }
+			  finally{
+			   disconn();
+			  }
+		
+		
+		
 		setVisible(true);
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public static void main(String[] args) {
 		new Order();
-
 	}
 }
