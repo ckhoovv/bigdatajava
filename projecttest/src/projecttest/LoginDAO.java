@@ -49,4 +49,14 @@ public class LoginDAO {
 		return dto;
 	}
 
+	private void dispose(LoginDAO loginDAO) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

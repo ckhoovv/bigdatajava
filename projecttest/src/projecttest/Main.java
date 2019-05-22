@@ -30,7 +30,7 @@ public class Main {
 
 	Main() {
 		
-		JFrame f = new JFrame("¿ΩΩƒ¡° POSΩ√Ω∫≈€");
+		JFrame f = new JFrame("ÏùåÏãùÏ†ê POSÏãúÏä§ÌÖú");
 		f.setSize(900, 800);
 		f.getContentPane().setLayout(null);
 		JPanel p = new JPanel();
@@ -41,7 +41,7 @@ public class Main {
 		JButton btnNewButton = new JButton("\uC885\uB8CC");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int result = JOptionPane.showConfirmDialog(f, "¡§∏ª ¡æ∑·«œΩ√∞⁄Ω¿¥œ±Ó?", "¡æ∑·", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+				int result = JOptionPane.showConfirmDialog(f, "Ï†ïÎßê Ï¢ÖÎ£åÌïòÏãúÍ≤†ÏäµÎãàÍπå?", "Ï¢ÖÎ£å", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 	            if(result == JOptionPane.NO_OPTION) {
 	               
 	            }else if(result == JOptionPane.YES_OPTION){
@@ -56,9 +56,11 @@ public class Main {
 		b1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Order or = new Order();
+				
+				
 			}
 		});
-		b1.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b1.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b1.setVerticalAlignment(SwingConstants.TOP);
 		b1.setBounds(12, 140, 191, 148);
 		p.add(b1);
@@ -66,9 +68,10 @@ public class Main {
 		JButton b2 = new JButton("2");
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b2.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b2.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b2.setVerticalAlignment(SwingConstants.TOP);
 		b2.setBounds(237, 140, 191, 148);
 		p.add(b2);
@@ -76,9 +79,10 @@ public class Main {
 		JButton b3 = new JButton("3");
 		b3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b3.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b3.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b3.setVerticalAlignment(SwingConstants.TOP);
 		b3.setBounds(459, 140, 191, 148);
 		p.add(b3);
@@ -86,9 +90,10 @@ public class Main {
 		JButton b4 = new JButton("4");
 		b4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b4.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b4.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b4.setVerticalAlignment(SwingConstants.TOP);
 		b4.setBounds(681, 140, 191, 148);
 		p.add(b4);
@@ -96,9 +101,10 @@ public class Main {
 		JButton b5 = new JButton("5");
 		b5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b5.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b5.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b5.setVerticalAlignment(SwingConstants.TOP);
 		b5.setBounds(12, 298, 191, 148);
 		p.add(b5);
@@ -106,9 +112,10 @@ public class Main {
 		JButton b6 = new JButton("6");
 		b6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b6.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b6.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b6.setVerticalAlignment(SwingConstants.TOP);
 		b6.setBounds(237, 298, 191, 148);
 		p.add(b6);
@@ -116,9 +123,10 @@ public class Main {
 		JButton b7 = new JButton("7");
 		b7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b7.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b7.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b7.setVerticalAlignment(SwingConstants.TOP);
 		b7.setBounds(459, 298, 191, 148);
 		p.add(b7);
@@ -126,9 +134,10 @@ public class Main {
 		JButton b8 = new JButton("8");
 		b8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b8.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b8.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b8.setVerticalAlignment(SwingConstants.TOP);
 		b8.setBounds(681, 298, 191, 148);
 		p.add(b8);
@@ -136,9 +145,10 @@ public class Main {
 		JButton b9 = new JButton("9");
 		b9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b9.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b9.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b9.setVerticalAlignment(SwingConstants.TOP);
 		b9.setBounds(12, 456, 191, 148);
 		p.add(b9);
@@ -146,9 +156,10 @@ public class Main {
 		JButton b10 = new JButton("10");
 		b10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b10.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b10.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b10.setVerticalAlignment(SwingConstants.TOP);
 		b10.setBounds(237, 456, 191, 148);
 		p.add(b10);
@@ -156,9 +167,10 @@ public class Main {
 		JButton b11 = new JButton("11");
 		b11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b11.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b11.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b11.setVerticalAlignment(SwingConstants.TOP);
 		b11.setBounds(459, 456, 191, 148);
 		p.add(b11);
@@ -166,9 +178,10 @@ public class Main {
 		JButton b12 = new JButton("12");
 		b12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Order or = new Order();
 			}
 		});
-		b12.setFont(new Font("±º∏≤", Font.BOLD, 15));
+		b12.setFont(new Font("Íµ¥Î¶º", Font.BOLD, 15));
 		b12.setVerticalAlignment(SwingConstants.TOP);
 		b12.setBounds(681, 456, 191, 148);
 		p.add(b12);
@@ -205,11 +218,15 @@ public class Main {
 		button_17.setBounds(681, 664, 116, 61);
 		p.add(button_17);
 		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(237, 10, 473, 61);
+		p.add(lblNewLabel);
+		
 		Vector<String> me = new Vector<String>();
-		me.addElement("π¯»£.");
-		me.addElement("∏ﬁ¥∫∏Ì");
-		me.addElement("ºˆ∑Æ");
-		me.addElement("±›æ◊");
+		me.addElement("Î≤àÌò∏.");
+		me.addElement("Î©îÎâ¥Î™Ö");
+		me.addElement("ÏàòÎüâ");
+		me.addElement("Í∏àÏï°");
 		DefaultTableModel model = new DefaultTableModel(me,0);
 		f.setVisible(true);
 		
@@ -218,5 +235,4 @@ public class Main {
 	public static void main(String[] args) {
 		new Main();
 	}
-	
 }

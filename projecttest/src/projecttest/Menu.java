@@ -21,7 +21,7 @@ public class Menu extends JFrame implements MouseListener {
 	String deleteRow = "";
 
 	Menu() {
-		setTitle("¸Ş´º°ü¸®ÇÁ·Î±×·¥");
+		setTitle("ë©”ë‰´ê´€ë¦¬í”„ë¡œê·¸ë¨");
 		jp1 = new JPanel();
 		jp2 = new JPanel();
 
@@ -30,14 +30,14 @@ public class Menu extends JFrame implements MouseListener {
 		jtf3 = new JTextField(8);
 		jtf4 = new JTextField(8);
 		
-		jl1 = new JLabel("¹øÈ£");
-		jl2 = new JLabel("¸Ş´º");
-		jl3 = new JLabel("¼ö·®");
-		jl4 = new JLabel("±İ¾×");
+		jl1 = new JLabel("ë²ˆí˜¸");
+		jl2 = new JLabel("ë©”ë‰´");
+		jl3 = new JLabel("ìˆ˜ëŸ‰");
+		jl4 = new JLabel("ê¸ˆì•¡");
 
-		jb1 = new JButton("ÀÔ·Â");
-		jb2 = new JButton("»èÁ¦");
-		jb3 = new JButton("¼öÁ¤");
+		jb1 = new JButton("ì…ë ¥");
+		jb2 = new JButton("ì‚­ì œ");
+		jb3 = new JButton("ìˆ˜ì •");
 
 		jp1.add(jb1);
 		jp1.add(jb2);
@@ -61,7 +61,7 @@ public class Menu extends JFrame implements MouseListener {
 
 		add(new JScrollPane(jt), "Center");
 
-		// ½ÇÇà¹öÆ°ÀÇ ¿¢¼Ç ¸®½ºÅÍ µî·Ï
+		// ì‹¤í–‰ë²„íŠ¼ì˜ ì—‘ì…˜ ë¦¬ìŠ¤í„° ë“±ë¡
 		jb1.addActionListener(new inputAction());
 		jb2.addActionListener(new deleteAction());
 		jb3.addActionListener(new renewAction());
@@ -129,8 +129,6 @@ public class Menu extends JFrame implements MouseListener {
 	
 			me.redefJTable();
 			jt.updateUI();
-			
-			
 	}
 
  }
