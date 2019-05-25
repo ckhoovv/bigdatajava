@@ -14,7 +14,6 @@ import javax.swing.table.DefaultTableModel;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
-import java.util.Vector;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JComboBox;
@@ -27,23 +26,33 @@ import javax.swing.ImageIcon;
 public class Main {
 	private static JTextField textField;
 	private static JTable table;
-	
-	
 
 	public static void main(String[] args) {
 		
 		JFrame f = new JFrame("À½½ÄÁ¡ POS½Ã½ºÅÛ");
 		f.setSize(900, 800);
 		f.getContentPane().setLayout(null);
-		JPanel p = new JPanel();
-		p.setBounds(0, 0, 884, 761);
-		f.getContentPane().add(p);
-		p.setLayout(null);
 		
 		JPanel p1 = new JPanel();
 		p1.setBounds(0, 0, 884, 761);
 		f.getContentPane().add(p1);
 		p1.setLayout(null);
+		JPanel p = new JPanel();
+		p.setBounds(0, 0, 884, 761);
+		f.getContentPane().add(p);
+		p.setLayout(null);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBounds(432, 135, 440, 419);
+		p1.add(panel);
+		JPanel panel1 = new JPanel();
+		panel1.setBounds(432, 135, 440, 419);
+		p1.add(panel1);
+		panel1.setLayout(null);
+		JPanel panel2 = new JPanel();
+		panel2.setLayout(null);
+		panel2.setBounds(432, 135, 440, 419);
+		p1.add(panel2);
 		
 		JButton btnNewButton = new JButton("\uC885\uB8CC");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -223,12 +232,6 @@ public class Main {
 		p.add(b12);
 		
 		JButton button_13 = new JButton("\uBA54\uB274\uAD00\uB9AC");
-		button_13.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Menu m= new Menu();
-				
-			}
-		});
 		button_13.setBounds(87, 664, 116, 61);
 		p.add(button_13);
 		
@@ -253,19 +256,6 @@ public class Main {
 		button_17.setBounds(681, 664, 116, 61);
 		p.add(button_17);
 		
-		JPanel panel = new JPanel();
-		panel.setLayout(null);
-		panel.setBounds(432, 135, 440, 419);
-		p1.add(panel);
-		JPanel panel1 = new JPanel();
-		panel1.setBounds(432, 135, 440, 419);
-		p1.add(panel1);
-		panel1.setLayout(null);
-		JPanel panel2 = new JPanel();
-		panel2.setLayout(null);
-		panel2.setBounds(432, 135, 440, 419);
-		p1.add(panel2);
-		
 		
 
 
@@ -281,21 +271,52 @@ public class Main {
 		p1.add(bb1);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(30, 35, 390, 449);
+		scrollPane.setBounds(30, 60, 390, 424);
 		p1.add(scrollPane);
-		
-		Vector<String> me = new Vector<String>();
-		me.addElement("¹øÈ£.");
-		me.addElement("¸Þ´º¸í");
-		me.addElement("¼ö·®");
-		me.addElement("±Ý¾×");
-		DefaultTableModel model = new DefaultTableModel(me,0);
+		String columnNames[] = {"NO","¸Þ´º¸í"};
+		String data[][] = {
+				{"±èÄ¡Âî°³","µÈÀåÂî°³"},
+				{"µÈÀåÂî°³","±èÄ¡Âî°³"}
+		};
+		DefaultTableModel model = new DefaultTableModel(data, columnNames);
+
 		table = new JTable(model);
-		
-		
-		
-		
 		scrollPane.setViewportView(table);
+		
+		JLabel lblNewLabel = new JLabel("NO.");
+		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel.setBounds(38, 39, 57, 15);
+		p1.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("\uC0C1\uD488\uBA85");
+		lblNewLabel_1.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_1.setBounds(90, 39, 57, 15);
+		p1.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("\uC2DC\uAC04");
+		lblNewLabel_2.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_2.setBounds(164, 39, 57, 15);
+		p1.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("\uC218\uB7C9");
+		lblNewLabel_3.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_3.setBounds(233, 39, 57, 15);
+		p1.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("\uAE08\uC561");
+		lblNewLabel_4.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_4.setBounds(276, 39, 43, 15);
+		p1.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("\uCD94\uAC00");
+		lblNewLabel_5.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_5.setBounds(331, 39, 35, 15);
+		p1.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("\uAD6C\uBD84");
+		lblNewLabel_6.setFont(new Font("±¼¸²", Font.BOLD, 12));
+		lblNewLabel_6.setBounds(377, 39, 43, 15);
+		p1.add(lblNewLabel_6);
 		JButton btnNewButton_1 = new JButton("\uC2DD\uC0AC\uB958");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -367,7 +388,6 @@ public class Main {
 		JButton button_30 = new JButton("\uD560\uC778");
 		button_30.setBounds(437, 560, 103, 191);
 		p1.add(button_30);
-		
 		
 		textField = new JTextField();
 		textField.setBounds(30, 494, 390, 257);
