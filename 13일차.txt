@@ -1,0 +1,177 @@
+
+
+
+- DB 프로그래밍
+- 프로젝트 DB설계 후, 구현
+- Java와 DB와의 연동
+  (JDBC)
+
+
+Java ------- Connector -----------DBMS
+                (Driver)	
+	   클래스들의 묶음(압축)
+	   archive(아카이브, 압축)
+	   java archieve(jar)
+	  
+
+
+
+JDBC프로그래밍 순서
+------------------------------
+1. 드라이버 설정
+2. DB연결 (DB명, ID, PW)
+3. SQL선택
+4. SQL전송
+--------------------------------
+5. 검색결과가 있는 처리
+
+
+==============================
+1. phone이라는 db에
+   product테이블(id, title, price, company)
+
+2. p100 apple 100 appcom
+   p200 banan 50 bacom
+
+===================================
+DB처리 클래스(부품) : crud...
+
+=> 멤버변수 + 멤버메소드
+
+
+
+
+Web프로그램, swing프로그램,  콘솔프로그램
+
+
+
+
+DDL 데이터정의언어
+테이블이나 관계의 구조를 생성하는데 사용
+create-새로운 데이터베이스 만들기
+drop- 이미 존재하는 데이터베이스 삭제
+alter- 이미 존재하는 데이터베이스개체에 대한 변경
+
+DML 데이터조작언어
+테이블에 데이터 검색, 삽입, 수정, 삭제하는 데 사용
+insert(create)- 데이터베이스에서 데이터를 등록
+select(read)-데이터베이스에서 데이터를 검색
+update(update)-데이터베이스에서 데이터를 업데이트
+delete(delete)-데이터베이스에서 데이터를 삭제
+
+DCL 데이터제어언어
+데이터의 사용 권한을 관리하는 데 사용
+create user
+
+
+
+
+1.dbms란? 
+>> db(database)많은 양의 데이터
+     dbms: database management system(sw+hw)
+     데이터베이스를 관리하기위한 시스템
+
+
+2.dbms의 종류 2가지 이상.
+>>   mysql oracle ms-sql server mariaDB
+
+3.dbms를 연결해서 사용하는 프로그램 이름.1개이상
+>>  Mysql client, Dbeaver, DataSourceExpolor
+
+4.db를 다루기위한 언어는?
+>>   sql
+
+5.sql문을 기능적으로 3가지로 분류
+>> DDL, DML, DCL
+
+6.5번에 해당하는 분류에 해당하는 sql문 예를 한개 이상
+>> DDL: create database test
+>> DML: insert into ~
+>> DCL: create user, backup, 용량관리
+
+7.dml에 해당하는 sql문을 처리 내용에 따라 4가지로 분류
+>> CRUD
+
+8.7번을 자세히 설명
+>> Create: insert
+>> Read: select
+>> Update: update
+>> Delete: delete
+
+9.port란?
+>> 하나의 ip로 운영하는 서버가 여러대인 경우
+     서버를 구분하기 위한 용도로 부가적으로 부여한 번호
+
+10.클래스를 만들때는 하나의 클래스에는 하나의 기능만 집중해서 만들어져야 합니다. 이것을 나타내는 말
+>> 응집도
+
+=====================================
+DB처리 클래스
+
+CRUD중에서, C만;
+ U, D를 완성해서 DB입력2에서 사용
+
+update id = win 을 찾아서 tel = 999변경
+delete id = win을 찾아서 삭제
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

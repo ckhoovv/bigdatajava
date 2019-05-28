@@ -1,0 +1,89 @@
+각 프로젝트 메뉴에서 사용할 테이블에 대한 CRUD완성하여 테스트
+
+Data Access Object(DAO)
+- 테이블당 하나
+
+
+-----------
+Member
+
+id
+pw
+name
+birth
+tel
+---------
+login
+
+id
+pw
+-----------
+foodlist
+
+number
+menu
+amount
+price
+-----------
+sales
+
+month
+day
+menu
+------------
+order
+
+material
+warehousing
+stock
+warehousing date
+
+===========================
+DAO
+
+Data Transfer Object
+
+(데이터 전송 객체)
+============================
+1. DTO의 필요성
+2. DTO를 만드는 방법
+3. DTO를 사용하면 좋은점
+4. DTO는 table의 무엇과 mapping?
+5. DTO는 무엇의 약자인가요?
+>> Data Transfer Object (데이터 전송 객체)
+6. ORM(Object-RDB의 mapping)
+===============================
+1. 각 메뉴의 테이블 당
+    DAO + DTO
+
+2. DTO를 만들어서, insert만 수정
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
