@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+tr{
+	width: 300px;
+}
+.t1{
+	width: 100px;
+	text-align: center;
+	background: blue;
+	color: orange;
+	height: 50px;
+	font-size: 20px;
+}
+.t1:hover{
+	background: lime;
+	font-weight: bold;
+	color: red;
+	height: 50px;
+	font-size: 20px;
+}
+.t2{
+	width: 200px;
+	background: yellow;
+	color: aqua;
+	text-align: center;
+	font-size: 20px;
+	
+}
+.t2:hover{
+	width: 200px;
+	text-align: center;
+	background: red;
+	color: white;
+	font-size: 20px;
+}
+#d1{
+	top: 150px;
+	right: 5px;
+	width: 200px;
+	height: 150px;
+	background: black;
+	font: 궁서 10px bold;
+	color: yellow;
+	border-top: 10px solid red;
+	border-bottom: 10px solid red;
+	border-radius: 40%;
+	box-shadow: 10px 5px lime;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
