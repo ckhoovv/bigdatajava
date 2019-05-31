@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Insert title here</title>
+			<script type="text/javascript">
+				function coffee(total, count){//지불 금액 계산
+					var price = total/count;
+					call2(parseInt(price));
+				}
+				function call2(rep) {//최종 지불 금액 계산
+					if(rep>=3000){
+						alert("당신이 지불할 금액은 " + (rep - 300));
+					}
+				}
+				coffee(10000,3);
+				
+				
+				
+			</script>
+		</head>
+	<body>
+	
+	</body>
+</html>
